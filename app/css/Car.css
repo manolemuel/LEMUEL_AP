@@ -1,0 +1,17 @@
+#CarsBody{
+	border: 2px solid #cff;
+	width: 700px;
+	height: 500px;
+	margin-top: 40px;
+	margin-left: 210px;
+}
+.pickup_timeMeridian{
+	width: 60px;
+}
+.pickup_timeHour{
+	width: 60px;
+}
+.pickup_timeMin{
+	width: 60px;
+}
+
