@@ -69,6 +69,112 @@
 						    
 				$this->closeCon();
 		}
+		/*	function add_flight($plane_choice, $galing_saHa, $papuntangSa, $choice, $depart, $return, $travalers){
+		
+				$this->openCon();
+					 $stmt = $this->con->prepare("INSERT INTO paBook(plane_choice, Bfrom, Bto , choice_way, Bdepart, Breturn, Btravel) values (?,?,?,?,?,?,?)");
+						      $stmt->bindParam(1, $plane_choice);
+						      $stmt->bindParam(2, $galing_saHa);
+						      $stmt->bindParam(3, $papuntangSa);
+						       $stmt->bindParam(4, $choice);
+						        $stmt->bindParam(5, $depart);
+						         $stmt->bindParam(6, $return);
+						          $stmt->bindParam(7, $travalers); 
+						   	 
+						   	  $stmt->execute();
+						      $paBook_id = $this->dbh->lastInsertId();
+						    
+				$this->closeCon();
+		}
+		
+		function add_Customer($Firstname, $Middlename, $Lastname, $Age, $EmailOrNumber, $CodeID, $Contact){
+		
+				$this->openCon();
+					 $stmt = $this->con->prepare("INSERT INTO Customer(fname, mname, lname, age, E_O_N , code, C_number) values (?,?,?,?,?,?,?)");
+						      $stmt->bindParam(1, $Firstname);
+						      $stmt->bindParam(2, $Middlename);
+						      $stmt->bindParam(3, $Lastname);
+						      $stmt->bindParam(4, $Age);
+						      $stmt->bindParam(5, $EmailOrNumber);
+						      $stmt->bindParam(6, $CodeID);
+						      $stmt->bindParam(7, $Contact); 
+						   	 
+						   	  $stmt->execute();
+						      $Cust_id = $this->con->lastInsertId();
+						      
+					
+						    
+				$this->closeCon();
+		}*/
+		function add_Customer_flight($Firstname, $Middlename, $Lastname, $Age, $EmailOrNumber, $CodeID, $Contact, 
+										$plane_choice, $galing_saHa, $papuntangSa,  $depart, $return, $travalers){
+		
+				$this->openCon();
+				//echo $plane_choice;
+				
+				
+				$plane_check2 = $this->con->prepare("SELECT COUNT(*) FROM Passengers_Plane where Plane = ?");
+				$plane_check2 ->bindParam(1, $plane_choice);
+				$plane_check2->execute();
+				$pass_pop= $plane_check2->fetch();
+				
+				//echo $pass_pop[0];
+				$max_pass = 15;
+				if($pass_pop[0] >=$max_pass){
+					echo "NO VACANCY";
+				}else{
+				 $stmt = $this->con->prepare("INSERT INTO Customer(fname, mname, lname, age, E_O_N , code, C_number) values (?,?,?,?,?,?,?)");
+						      $stmt->bindParam(1, $Firstname);
+						      $stmt->bindParam(2, $Middlename);
+						      $stmt->bindParam(3, $Lastname);
+						      $stmt->bindParam(4, $Age);
+						      $stmt->bindParam(5, $EmailOrNumber);
+						      $stmt->bindParam(6, $CodeID);
+						      $stmt->bindParam(7, $Contact); 
+						   	 
+						   	  $stmt->execute();
+						      $Cust_id = $this->con->lastInsertId();
+					
+					$stmt2 = $this->con->prepare("INSERT INTO paBook(plane_choice, Bfrom, Bto , choice_way, Bdepart, Breturn, Btravel) values (?,?,?,?,?,?,?)");
+						      $stmt2->bindParam(1, $plane_choice);
+						      $stmt2->bindParam(2, $galing_saHa);
+						      $stmt2->bindParam(3, $papuntangSa);
+						       $stmt2->bindParam(4, $choice);
+						        $stmt2->bindParam(5, $depart);
+						         $stmt2->bindParam(6, $return);
+						          $stmt2->bindParam(7, $travalers); 
+						   	 
+						   	  $stmt2->execute();
+						      $paBook_id = $this->con->lastInsertId();
+						      
+					$stmt3 = $this->con->prepare("INSERT INTO Passengers_Plane (customer_id, Plane) VALUES (?,?)");
+					$stmt3 ->bindParam(1, $Cust_id);
+					$stmt3->bindParam(2, $plane_choice);
+					$stmt3->execute();
+					
+					echo "Successfully Booked!!";
+				}
+				
+				$this->closeCon();
+		}
+		
+			function add_custHotel($Firstname, $Middlename, $Lastname, $Age, $EmailOrNumber, $CodeID, $Contact){
+		
+				$this->openCon();
+					 $stmt = $this->con->prepare("INSERT INTO CustHotel(fnameH, mnameH, lnameH, ageH, E_O_N_H, codeH, C_numberH) values (?,?,?,?,?,?,?)");
+						      $stmt->bindParam(1, $Firstname);
+						      $stmt->bindParam(2, $Middlename);
+						      $stmt->bindParam(3, $Lastname);
+						      $stmt->bindParam(4, $Age);
+						      $stmt->bindParam(5, $EmailOrNumber);
+						      $stmt->bindParam(6, $CodeID);
+						      $stmt->bindParam(7, $Contact); 
+						   	 
+						   	  $stmt->execute();
+						      $Cust_id = $this->con->lastInsertId();
+						    
+				$this->closeCon();
+		}
 		
 		function view_plane(){
 			$this->openCon();
@@ -173,42 +279,26 @@
 			 $this->closeCon();
 		}
 	  	
+	  	function check_flight($plane_choice){
+	  	$this->openCon();
+	  		$stmt= $this->con->prepare("SELECT COUNT(*) FROM Passengers_Plane WHERE Plane =?");
+	  		$stmt->bindParam(1, $plane_choice);
+	  		$stmt->execute();
+			$pass_pop= $stmt->fetch();
+				
+				//echo $pass_pop[0];
+				$max_pass = 3;
+				if($pass_pop[0] >=$max_pass){
+					echo "NO VACANCY";
+				}
+				else{
+					echo "<tr><td><button onclick = 'opendialog()'>Continue</button><td></tr>";
+				}
+
+	  	$this->closeCon();
+	  	}
 	  	
-	  	function add_flight($plane_choice, $galing_saHa, $papuntangSa, $choice, $depart, $return, $travalers){
-		
-				$this->openCon();
-					 $stmt = $this->con->prepare("INSERT INTO paBook(plane_choice, Bfrom, Bto , choice_way, Bdepart, Breturn, Btravel) values (?,?,?,?,?,?,?)");
-						      $stmt->bindParam(1, $plane_choice);
-						      $stmt->bindParam(2, $galing_saHa);
-						      $stmt->bindParam(3, $papuntangSa);
-						       $stmt->bindParam(4, $choice);
-						        $stmt->bindParam(5, $depart);
-						         $stmt->bindParam(6, $return);
-						          $stmt->bindParam(7, $travalers); 
-						   	 
-						   	  $stmt->execute();
-						      $paBook_id = $this->dbh->lastInsertId();
-						    
-				$this->closeCon();
-		}
-		
-		function add_Customer($Firstname, $Middlename, $Lastname, $Age, $EmailOrNumber, $CodeID, $Contact){
-		
-				$this->openCon();
-					 $stmt = $this->con->prepare("INSERT INTO Customer(fname, mname, lname, age, E_O_N , code, C_number) values (?,?,?,?,?,?,?)");
-						      $stmt->bindParam(1, $Firstname);
-						      $stmt->bindParam(2, $Middlename);
-						      $stmt->bindParam(3, $Lastname);
-						      $stmt->bindParam(4, $Age);
-						      $stmt->bindParam(5, $EmailOrNumber);
-						      $stmt->bindParam(6, $CodeID);
-						      $stmt->bindParam(7, $Contact); 
-						   	 
-						   	  $stmt->execute();
-						      $Cust_id = $this->con->lastInsertId();
-						    
-				$this->closeCon();
-		}
+	  
 
 		
 	}

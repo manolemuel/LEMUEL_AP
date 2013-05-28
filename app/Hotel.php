@@ -74,13 +74,45 @@
                 <div id="loginBox2">                
                     <form id="loginForm2">
                         <fieldset id="body2">
+                        	 <fieldset>
+                                <label for="firstnametext">firstname</label>
+                                <input type="text" name="firstnamefirstname" id="firstname" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="lastname">lastname</label>
+                                <input type="text" name="lastname" id="lastname" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="middlename">middlename</label>
+                                <input type="text" name="middlename" id="middlename" />
+                            </fieldset>
                             <fieldset>
                                 <label for="email">Email Address</label>
                                 <input type="text" name="email" id="email" />
                             </fieldset>
                             <fieldset>
+                                <label for="Age">Age</label>
+                                <input type="text" name="Age" id="Age" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="birthday">birthday</label>
+                                <input type="text" name="birthday" id="birthday" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="Address">Address</label>
+                                <input type="text" name="Address" id="Address" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="Code-Id">Code-Id</label>
+                                <input type="text" name="Code-Id" id="Code-Id" />
+                            </fieldset>
+                             <fieldset>
                                 <label for="password">Password</label>
                                 <input type="password" name="password" id="password" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="password2">Re-Password</label>
+                                <input type="password" name="password2" id="password2" />
                             </fieldset>
                             <button type="submit" class="login2" >Register..!!</button>
                           
@@ -176,12 +208,15 @@
 
 							</div>
 					
-					
+		<div id="formbody">			
 					
 						<label for="from">Check-in</label>
-						<input type="text" class="from" name="checkIn" /></br>
+						<input type="text" class="from" name="checkIn" id="checkIn"/>
+						<label class="error" for="checkIn" id="checkIn_error"><code>This field is required</code></label>
+						
 						<label for="to">Check-Out</label>
-						<input type="text" class="to" name="checkOut" />
+						<input type="text" class="to" name="checkOut" id="checkOut"/>
+						<label class="error" for="checkOut" id="checkOut_error"><code>This field is required</code></label>
 
 		<div class="">
 			<label for="" class="">Room for Adults</label>
@@ -207,10 +242,68 @@
 					<option value="0" >Need more rooms ?</option>
 				</select>
 			</span></span>
-			<input type="button" id="pic" value="Search"/>
+			<input type="button" id="pic" value="Search" class="btn btn-inverse"/>
+	</div>
 		 	<input type="button" id="Btn" value="add"/>
+		 	
+		 	
+		 	<div id="hotelDialog">
+					<form class="">
+						Firstname:<input type="text" name="Firstname" placeholder="enter Firstname" id="Firstname">
+						<label class="error" for="Firstname" id="Firstname_error"><code>This field is required</code></label>
+			
+						Middlename:<input type="text" name="Middlename" placeholder="enter Middlename" id="Middlename">
+						<label class="error" for="Middlename" id="Middlename_error"><code>This field is required</code></label>
+			
+						Lastname:<input type="text" name="Lastname" placeholder="enter Lastname" id="Lastname">
+						<label class="error" for="Lastname" id="Lastname_error"><code>This field is required</code></label>
+			
+						Age:<input type="text" name="Age" placeholder="enter Age" id="Age">
+						<label class="error" for="Age" id="Age_error"><code>This field is required</code></label>
+			
+						Email or Number:<input type="text" name="EmailOrNumber" placeholder="enter Email or Number" id="EmailOrNumber">
+						<label class="error" for="EmailOrNumber" id="EmailOrNumber_error"><code>This field is required</code></label>
+			
+						Code-Id:<input type="text" name="CodeID" placeholder="enter Code-id" id="CodeID"></li>
+						<label class="error" for="CodeID" id="CodeID_error"><code>This field is required</code></label>
+			
+						Contact-Num:<input type="text" name="Contact" placeholder="enter Contact" id="Contact">
+						<label class="error" for="Contact" id="Contact_error"><code>This field is required</code></label>
+			
+			
+					</form>
+			</div>
 					</form>
 					<div id="hahahhha">Are u sure?</div>
+<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+   
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item"><img id = "carousel-image" src = "image/images1.jpg"/></div>
+    <div class="item"><img id = "carousel-image" src = "image/images2.jpg"/></div>
+    <div class="item"><img id = "carousel-image" src = "image/images3.jpg"/></div>
+    <div class="item"><img id = "carousel-image" src = "image/images4.jpg"/></div>
+    <div class="item"><img id = "carousel-image" src = "image/images5.jpg"/></div>
+    <div class="item"><img id = "carousel-image" src = "image/images6.jpg"/></div>
+    <div class="item"><img id = "carousel-image" src = "image/images7.jpg"/></div>
+    <div class="item"><img id = "carousel-image" src = "image/images8.jpg"/></div>
+    <div class="item"><img id = "carousel-image" src = "image/images9.jpg"/></div>
+    <div class="item"><img id = "carousel-image" src = "image/images10.jpg"/></div>
+    
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+
+
 	</div>
 	<div id="frmFooter">
 					<p><a href="">Advertise</a>

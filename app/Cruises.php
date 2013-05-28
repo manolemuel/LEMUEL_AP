@@ -74,13 +74,45 @@
                 <div id="loginBox2">                
                     <form id="loginForm2">
                         <fieldset id="body2">
+                             <fieldset>
+                                <label for="firstnametext">firstname</label>
+                                <input type="text" name="firstnamefirstname" id="firstname" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="lastname">lastname</label>
+                                <input type="text" name="lastname" id="lastname" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="middlename">middlename</label>
+                                <input type="text" name="middlename" id="middlename" />
+                            </fieldset>
                             <fieldset>
                                 <label for="email">Email Address</label>
                                 <input type="text" name="email" id="email" />
                             </fieldset>
                             <fieldset>
+                                <label for="Age">Age</label>
+                                <input type="text" name="Age" id="Age" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="birthday">birthday</label>
+                                <input type="text" name="birthday" id="birthday" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="Address">Address</label>
+                                <input type="text" name="Address" id="Address" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="Code-Id">Code-Id</label>
+                                <input type="text" name="Code-Id" id="Code-Id" />
+                            </fieldset>
+                             <fieldset>
                                 <label for="password">Password</label>
                                 <input type="password" name="password" id="password" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="password2">Re-Password</label>
+                                <input type="password" name="password2" id="password2" />
                             </fieldset>
                             <button type="submit" class="login2" >Register..!!</button>
                           
@@ -113,7 +145,7 @@
     <td>
 		<label for="destination" class="">Destination</label>
 		<select name="Destination" class="" tabindex="1" style="width:220px;" id="">
-<option value="">-- Select destination --</option>
+
 <option value="1">Africa</option>
 <option value="2">Alaska</option>
 <option value="3">Asia</option>
@@ -182,7 +214,7 @@
 
 
 </form>
-<input type="button" id="Cruises_Btn" value="Search"/>
+<input type="button" id="Cruises_Btn" value="Search" class="btn btn-inverse"/>
 	</div>	
 	<div id="frmFooter">
 					<p><a href="">Advertise</a>

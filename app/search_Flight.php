@@ -1,9 +1,10 @@
 <?php
 	include 'dao/AirDAO.php';
 	
-	$galing_sa=$_POST['galing_sa'];
+	$galing_saHa=$_POST['galing_saHa'];
+	$papuntangSa=$_POST['papuntangSa'];
 
 	$action=new AirDAO;
-	$action->search_flight($galing_sa);
+	$action->searchFlight($galing_saHa, $papuntangSa);
 
 ?>

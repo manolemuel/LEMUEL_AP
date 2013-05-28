@@ -74,13 +74,45 @@
                 <div id="loginBox2">                
                     <form id="loginForm2">
                         <fieldset id="body2">
+                        	 <fieldset>
+                                <label for="firstnametext">firstname</label>
+                                <input type="text" name="firstnamefirstname" id="firstname" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="lastname">lastname</label>
+                                <input type="text" name="lastname" id="lastname" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="middlename">middlename</label>
+                                <input type="text" name="middlename" id="middlename" />
+                            </fieldset>
                             <fieldset>
                                 <label for="email">Email Address</label>
                                 <input type="text" name="email" id="email" />
                             </fieldset>
                             <fieldset>
+                                <label for="Age">Age</label>
+                                <input type="text" name="Age" id="Age" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="birthday">birthday</label>
+                                <input type="text" name="birthday" id="birthday" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="Address">Address</label>
+                                <input type="text" name="Address" id="Address" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="Code-Id">Code-Id</label>
+                                <input type="text" name="Code-Id" id="Code-Id" />
+                            </fieldset>
+                             <fieldset>
                                 <label for="password">Password</label>
                                 <input type="password" name="password" id="password" />
+                            </fieldset>
+                             <fieldset>
+                                <label for="password2">Re-Password</label>
+                                <input type="password" name="password2" id="password2" />
                             </fieldset>
                             <button type="submit" class="login2" >Register..!!</button>
                           
@@ -106,31 +138,37 @@
 </div><!DIVNAV>
 	<div id="PackageBody">
 		<form>
-
+				<div id="formbody">
             	<label for="">From:</label>
-            	<input name="From" type="text" value="" tabindex="1" autocomplete="off" class="" id="from_code" />            
+            		
+            	<input name="From" type="text" value="" tabindex="1" autocomplete="off" class="" id="From" />  
+            	<label class="error" for="From" id="From_error"><code>This field is required</code></label>          
             		<div class=""></div>
               		<input type="hidden" name="" id="" value="" />
      
 
 	
         	<label for="">To:</label>
-        	<input name="To" type="text" value="" tabindex="2" autocomplete="off" class="" id="to_code" />        	
+        	<label class="error" for="To" id="To_error"><code>This field is required</code></label>
+        	<input name="To" type="text" value="" tabindex="2" autocomplete="off" class="" id="To" />        	
         		<div class=""></div>
           		<input type="hidden" name="]" id="" value="" />
      
 
 
 				<label for="from">Depart:</label>
-				<input type="text" class="from" name="Depart" /></br>
+				<label class="error" for="Depart" id="Depart_error"><code>This field is required</code></label>
+				<input type="text" class="from" name="Depart" id="Depart"/></br>
+				
 				<label for="to">Return:</label>
-				<input type="text" class="to" name="Return" /></br>
+				<label class="error" for="Return" id="Return_error"><code>This field is required</code></label>
+				<input type="text" class="to" name="Return" id="Return"/></br>
 
 
 
 
     		<label for="Travel">Travelers:</label>
-    		<select name="Travel" tabindex="5" id="">
+    		<select name="Travel" tabindex="5" id="travelers">
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
@@ -138,9 +176,9 @@
 				<option value="5">5</option>
 				<option value="6">6+</option>
 			</select>
-
+			</div>
 		</form>
-			<input type="button" id="Package_Btn" value="Search"/>
+			<input type="button" id="Package_Btn" value="Search" class="btn btn-inverse"/>
 	</div>
 	<div id="frmFooter">
 					<p><a href="">Advertise</a>

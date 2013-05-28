@@ -1,9 +1,45 @@
 #HotelBody{
 	border: 2px solid #cff;
-	width: 600px;
+	border-radius: 20px;
+	width: 400px;
 	height: 300px;
 	margin-top: 40px;
 	margin-left: 210px;
+	background: -moz-linear-gradient(top, rgba(41,137,216,1) 0%, rgba(33,99,168,0) 34%, rgba(30,87,153,0.13) 45%, rgba(30,87,153,0.24) 54%, rgba(30,87,153,0.8) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(41,137,216,1)), color-stop(34%,rgba(33,99,168,0)), color-stop(45%,rgba(30,87,153,0.13)), color-stop(54%,rgba(30,87,153,0.24)), color-stop(100%,rgba(30,87,153,0.8))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(41,137,216,1) 0%,rgba(33,99,168,0) 34%,rgba(30,87,153,0.13) 45%,rgba(30,87,153,0.24) 54%,rgba(30,87,153,0.8) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(41,137,216,1) 0%,rgba(33,99,168,0) 34%,rgba(30,87,153,0.13) 45%,rgba(30,87,153,0.24) 54%,rgba(30,87,153,0.8) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(41,137,216,1) 0%,rgba(33,99,168,0) 34%,rgba(30,87,153,0.13) 45%,rgba(30,87,153,0.24) 54%,rgba(30,87,153,0.8) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(41,137,216,1) 0%,rgba(33,99,168,0) 34%,rgba(30,87,153,0.13) 45%,rgba(30,87,153,0.24) 54%,rgba(30,87,153,0.8) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2989d8', endColorstr='#cc1e5799',GradientType=0 ); /* IE6-9 */
+}
+#carousel-image {
+	width: 400px;
+	height: 370px;
+	margin-left: 80px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 20px;
+}
+#myCarousel {
+	color: black;
+	border: 2px solid white;
+	border-radius: 20px;
+	width: 550px;
+	height: 400px;
+	margin-top: -282px;
+	margin-left: 440px;
+	background: -moz-linear-gradient(top, rgba(41,137,216,1) 0%, rgba(33,99,168,0) 34%, rgba(30,87,153,0.13) 45%, rgba(30,87,153,0.24) 54%, rgba(30,87,153,0.8) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(41,137,216,1)), color-stop(34%,rgba(33,99,168,0)), color-stop(45%,rgba(30,87,153,0.13)), color-stop(54%,rgba(30,87,153,0.24)), color-stop(100%,rgba(30,87,153,0.8))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(41,137,216,1) 0%,rgba(33,99,168,0) 34%,rgba(30,87,153,0.13) 45%,rgba(30,87,153,0.24) 54%,rgba(30,87,153,0.8) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(41,137,216,1) 0%,rgba(33,99,168,0) 34%,rgba(30,87,153,0.13) 45%,rgba(30,87,153,0.24) 54%,rgba(30,87,153,0.8) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(41,137,216,1) 0%,rgba(33,99,168,0) 34%,rgba(30,87,153,0.13) 45%,rgba(30,87,153,0.24) 54%,rgba(30,87,153,0.8) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(41,137,216,1) 0%,rgba(33,99,168,0) 34%,rgba(30,87,153,0.13) 45%,rgba(30,87,153,0.24) 54%,rgba(30,87,153,0.8) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2989d8', endColorstr='#cc1e5799',GradientType=0 ); /* IE6-9 */
+}
+#formbody{
+	margin-left: 40px;
+	margin-top: 20px;
 }
 #Btn{
 	display: none;
@@ -13,6 +49,9 @@
 }
 .hotels_set{
 	width:120px;
+}
+#hotelDialog{
+	display: none;
 }
 img{
 	width: 120px;
